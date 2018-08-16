@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./static/js/jquery-3.1.1.js"></script>
+    <script>
+       function login(){
+            var u = $('#username').val();
+            var p = $('#password').val();
+                var data={
+                    'username':u,
+                    'password':p
+                }
+            $.ajax({
+                type: 'GET',
+                url: '/user/v1/login',
+                data: data,
+                contentType: 'application/json; charset=UTF-8',
+                dataType: 'json',
+                success: function(data) {
+                  console.log(data);
+                }
+            })
+       }
+    </script>
+</head>
+<body>
+    <div>cmdb大V店</div>
+    <p><input type="text" required="required" placeholder="用户名" id="username" /></p>
+    <p><input type="password" required="required" placeholder="密码" id="password" /></p>
+    <p> <input type="submit" value="登录" onclick="login()" /></p>
+
+</body>
+</html>

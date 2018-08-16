@@ -1,0 +1,4 @@
+Flask==0.12.2
+DBUtils==1.2
+python_ldap==3.0.0
+mysql_connector_repackaged==0.3.1
